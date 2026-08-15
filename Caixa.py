@@ -2,7 +2,7 @@ import streamlit as st
 
 # Configuração inicial da página com ícone e título da Guiné-Bissau
 st.set_page_config(
-    page_title="SNS Digital - Guiné-Bissau 🇬🇼",
+    page_title="SNS Digital - Guiné-Bissau 🇬🇼 - Diolindo Mendes",
     page_icon="🇬🇼",
     layout="wide"
 )
