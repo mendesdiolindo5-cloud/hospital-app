@@ -1,8 +1,8 @@
 import streamlit as st
 
-# Configuração inicial da página com o teu nome no título da barra
+# Configuração da página
 st.set_page_config(
-    page_title="SNS Digital - Diolindo Mendes 🇬🇼",
+    page_title="SNS Digital - Guiné-Bissau 🇬🇼",
     page_icon="🇬🇼",
     layout="wide"
 )
@@ -10,12 +10,12 @@ st.set_page_config(
 # --- BARRA LATERAL (SIDEBAR) ---
 st.sidebar.image(
     "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Guinea-Bissau.svg",
-    width=150
+    width=120
 )
 
-# Exibição da Bandeira + Teu Nome
+# Nome muito pequeno em vermelho por cima / ao lado do título
+st.sidebar.markdown("<span style='color:red; font-size:11px; font-weight:bold;'>Diolindo Mendes</span>", unsafe_allow_html=True)
 st.sidebar.title("🇬🇼 SNS Digital")
-st.sidebar.markdown("**Desenvolvido por: Diolindo Mendes**")
 st.sidebar.markdown("---")
 
 menu = st.sidebar.radio(
@@ -25,8 +25,9 @@ menu = st.sidebar.radio(
 
 # --- 1. TRIAGEM DE PACIENTES ---
 if menu == "🩺 Triagem de Pacientes (Público)":
+    # Nome pequeno e vermelho no topo do ecrã principal
+    st.markdown("<span style='color:red; font-size:12px; font-weight:bold;'>Diolindo Mendes</span>", unsafe_allow_html=True)
     st.title("🩺 Portal de Triagem Hospitalar 🇬🇼")
-    st.caption("Sistema do Ministério da Saúde | Responsável: Diolindo Mendes")
     st.write("Preencha os dados do paciente para encaminhamento automático.")
 
     col1, col2 = st.columns(2)
@@ -51,8 +52,8 @@ if menu == "🩺 Triagem de Pacientes (Público)":
 
 # --- 2. PONTO MÉDICO ---
 elif menu == "👨‍⚕️ Ponto Médico (Público)":
+    st.markdown("<span style='color:red; font-size:12px; font-weight:bold;'>Diolindo Mendes</span>", unsafe_allow_html=True)
     st.title("👨‍⚕️ Registo de Ponto do Pessoal Médico")
-    st.caption("Gestão de Turnos | Diolindo Mendes")
     
     medico_nome = st.text_input("Nome do Profissional / ID")
     tipo_ponto = st.selectbox("Tipo de Registo", ["Entrada de Turno", "Saída de Turno", "Pausa"])
@@ -65,13 +66,13 @@ elif menu == "👨‍⚕️ Ponto Médico (Público)":
 
 # --- 3. PAINEL DO ADMINISTRADOR ---
 elif menu == "🔒 Painel do Administrador (Privado)":
+    st.markdown("<span style='color:red; font-size:12px; font-weight:bold;'>Diolindo Mendes</span>", unsafe_allow_html=True)
     st.title("🔒 Painel do Administrador")
-    st.caption("Acesso Restrito | Administrador: Diolindo Mendes")
     
     codigo = st.text_input("Insira o Código Mestre de Acesso", type="password")
     
     if codigo == "03032003":
-        st.success("Acesso Autorizado! Bem-vindo, Diolindo Mendes.")
+        st.success("Acesso Autorizado!")
         st.subheader("📊 Estatísticas do Sistema")
         st.metric("Pacientes Atendidos Hoje", "24")
         st.metric("Médicos em Serviço", "8")
