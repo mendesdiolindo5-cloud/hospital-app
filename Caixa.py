@@ -1,13 +1,18 @@
 import streamlit as st
-import json
-from datetime import datetime
 
-# Configuração da página Web para telemóveis e computadores
+# Configuração da página com o ícone da bandeira da Guiné-Bissau
 st.set_page_config(
-    page_title="Sistema Hospitalar & Ministério",
-    page_icon="🏥",
-    layout="wide",
-    initial_sidebar_state="expanded"
+    page_title="SNS Digital - Guiné-Bissau 🇬🇼",
+    page_icon="🇬🇼",
+    layout="wide"
+)
+
+# Imagem/Bandeira visível no topo da barra lateral
+st.sidebar.image(
+    "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_Guinea-Bissau.svg",
+    use_container_width=True
+)
+st.sidebar.title("🇬🇼 SNS Digital")
 )
 
 # Inicialização da base de dados em memória do site (Session State)
